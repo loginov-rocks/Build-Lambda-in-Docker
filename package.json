@@ -1,0 +1,37 @@
+{
+  "name": "@loginov-rocks/build-lambda-in-docker",
+  "version": "0.0.0",
+  "description": "How to build and package Node.js Lambda code along with dependencies in Docker",
+  "scripts": {
+    "docker:build": "docker build -t build-lambda-in-docker .",
+    "docker:create": "docker create -ti --name build-lambda-in-docker-temp build-lambda-in-docker bash",
+    "docker:copy": "docker cp build-lambda-in-docker-temp:/app/function.zip .",
+    "docker:clean": "docker rm -f build-lambda-in-docker-temp",
+    "package": "npm run docker:build && npm run docker:create && npm run docker:copy && npm run docker:clean",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loginov-rocks/Build-Lambda-in-Docker.git"
+  },
+  "author": "Danila Loginov <danila@loginov.rocks> (https://loginov.rocks)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/loginov-rocks/Build-Lambda-in-Docker/issues"
+  },
+  "homepage": "https://github.com/loginov-rocks/Build-Lambda-in-Docker",
+  "dependencies": {
+    "aws-sdk": "^2.1043.0",
+    "sharp": "^0.29.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/sharp": "^0.29.4",
+    "babel-loader": "^8.2.3",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
