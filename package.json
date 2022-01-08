@@ -1,6 +1,6 @@
 {
   "name": "@loginov-rocks/build-lambda-in-docker",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "How to build and package Node.js Lambda code along with dependencies in Docker",
   "scripts": {
     "docker:build": "docker build -t build-lambda-in-docker .",
