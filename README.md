@@ -1,4 +1,4 @@
-# Build-Lambda-in-Docker
+# Build Lambda in Docker
 
 How to build and package Node.js Lambda code along with dependencies in Docker:
 [Medium](https://loginov-rocks.medium.com/building-node-js-lambda-with-dependencies-in-a-docker-container-68e7cb81c9a7)
