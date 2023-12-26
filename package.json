@@ -1,7 +1,11 @@
 {
   "name": "@loginov-rocks/build-lambda-in-docker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "How to build and package Node.js Lambda code along with dependencies in Docker",
+  "engines": {
+    "node": "18",
+    "npm": "10"
+  },
   "scripts": {
     "docker:build": "docker build -t build-lambda-in-docker .",
     "docker:create": "docker create -ti --name build-lambda-in-docker-temp build-lambda-in-docker bash",
@@ -21,17 +25,17 @@
   },
   "homepage": "https://github.com/loginov-rocks/Build-Lambda-in-Docker",
   "dependencies": {
-    "aws-sdk": "^2.1043.0",
-    "sharp": "^0.29.3"
+    "@aws-sdk/client-s3": "^3.478.0",
+    "sharp": "^0.33.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-typescript": "^7.16.0",
-    "@types/sharp": "^0.29.4",
-    "babel-loader": "^8.2.3",
-    "typescript": "^4.5.2",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1"
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/sharp": "^0.31.1",
+    "babel-loader": "^9.1.3",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }

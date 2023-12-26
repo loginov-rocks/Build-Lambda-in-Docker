@@ -3,10 +3,11 @@ const path = require('path');
 module.exports = {
   devtool: false,
   entry: './src/index.ts',
-  externals: {
-    'aws-sdk': 'commonjs aws-sdk',
-    sharp: 'commonjs sharp',
-  },
+  externals: [
+    '@aws-sdk/client-s3',
+    'sharp',
+  ],
+  externalsType: 'node-commonjs',
   module: {
     rules: [
       {

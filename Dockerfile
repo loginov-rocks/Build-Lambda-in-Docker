@@ -1,10 +1,10 @@
 # BASE
-FROM amazonlinux:2.0.20211201.0 AS base
+FROM amazonlinux:2023.3.20231218.0 AS base
 
 RUN yum -y install gzip tar zip
 RUN touch ~/.bashrc
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-RUN source ~/.bashrc && nvm install 14.18.2
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+RUN source ~/.bashrc && nvm install 18.9.0
 
 # BUILD
 FROM base AS build
